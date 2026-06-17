@@ -5,10 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OVI: El Sentido de Urgencia - Enseña por Colombia</title>
     
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Configuración de Tailwind para colores de la marca -->
     <script>
         tailwind.config = {
             theme: {
@@ -19,11 +17,11 @@
                             100: '#d5e0ec',
                             500: '#3a6b9e',
                             800: '#1e3a5f',
-                            900: '#0f243e', // Azul oscuro institucional
+                            900: '#0f243e',
                         },
                         excYellow: {
                             400: '#facc15',
-                            500: '#eab308', // Amarillo institucional
+                            500: '#eab308',
                         }
                     },
                     fontFamily: {
@@ -34,18 +32,8 @@
         }
     </script>
 
-    <!-- FontAwesome para Íconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-
-    <!-- React & ReactDOM -->
-    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-    
-    <!-- Babel para JSX -->
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
     <style>
         body { font-family: 'Inter', sans-serif; background-color: #f8fafc; }
@@ -84,229 +72,232 @@
     </style>
 </head>
 <body>
-    <div id="root"></div>
-
-    <script type="text/babel">
-        const { useState, useEffect } = React;
-
-        // --- Componentes UI ---
-
-        const Hero = () => (
-            <header className="bg-excBlue-900 text-white pt-20 pb-24 px-6 relative overflow-hidden">
-                <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
-                    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse">
-                                <circle cx="2" cy="2" r="2" fill="currentColor"/>
-                            </pattern>
-                        </defs>
-                        <rect width="100%" height="100%" fill="url(#dots)"/>
-                    </svg>
-                </div>
-                <div className="max-w-5xl mx-auto relative z-10 text-center fade-in-up">
-                    <span className="bg-excYellow-500 text-excBlue-900 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-4 inline-block">
-                        OVI • Módulo 2
-                    </span>
-                    <h1 className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">
-                        El Sentido de <span className="text-excYellow-400">Urgencia</span>
-                    </h1>
-                    <p className="text-lg md:text-xl text-excBlue-100 max-w-3xl mx-auto font-light leading-relaxed">
-                        ¿Por qué la Orientación Socio Ocupacional (OSO) no da espera? Descubre el panorama actual de nuestras juventudes y comprende por qué tu rol como implementador es vital para transformar trayectorias de vida.
-                    </p>
-                </div>
-            </header>
-        );
-
-        const SectionTitle = ({ title, icon, subtitle }) => (
-            <div className="text-center mb-12">
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-excBlue-100 text-excBlue-900 mb-4">
-                    <i className={`fas ${icon} text-2xl`}></i>
-                </div>
-                <h2 className="text-3xl font-bold text-excBlue-900 mb-2">{title}</h2>
-                {subtitle && <p className="text-gray-600 max-w-2xl mx-auto">{subtitle}</p>}
+    <div class="min-h-screen flex flex-col">
+        <header class="bg-excBlue-900 text-white pt-20 pb-24 px-6 relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+                <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse">
+                            <circle cx="2" cy="2" r="2" fill="currentColor"/>
+                        </pattern>
+                    </defs>
+                    <rect width="100%" height="100%" fill="url(#dots)"/>
+                </svg>
             </div>
-        );
-
-        const StatCard = ({ icon, number, suffix, title, desc, delay, isAlert = false }) => (
-            <div className={`stat-card bg-white p-8 rounded-2xl shadow-lg border-b-4 ${isAlert ? 'border-red-500' : 'border-excYellow-500'} fade-in-up ${delay} relative overflow-hidden group`}>
-                <div className={`absolute top-0 right-0 w-24 h-24 bg-gray-50 rounded-bl-full -z-10 transition-transform group-hover:scale-110`}></div>
-                <i className={`fas ${icon} stat-icon text-4xl mb-4 ${isAlert ? 'text-red-500' : 'text-excBlue-800'}`}></i>
-                <div className="mb-2">
-                    <span className="text-5xl font-extrabold text-gray-900">{number}</span>
-                    <span className="text-2xl font-bold text-gray-500">{suffix}</span>
-                </div>
-                <h3 className="text-xl font-bold text-excBlue-900 mb-2">{title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{desc}</p>
+            <div class="max-w-5xl mx-auto relative z-10 text-center fade-in-up">
+                <span class="bg-excYellow-500 text-excBlue-900 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-4 inline-block">
+                    OVI • Módulo 2
+                </span>
+                <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">
+                    El Sentido de <span class="text-excYellow-400">Urgencia</span>
+                </h1>
+                <p class="text-lg md:text-xl text-excBlue-100 max-w-3xl mx-auto font-light leading-relaxed">
+                    ¿Por qué la Orientación Socio Ocupacional (OSO) no da espera? Descubre el panorama actual de nuestras juventudes y comprende por qué tu rol como implementador es vital para transformar trayectorias de vida.
+                </p>
             </div>
-        );
+        </header>
 
-        const ProgressBar = ({ label, percentage, colorClass }) => (
-            <div className="mb-6">
-                <div className="flex justify-between mb-2">
-                    <span className="text-sm font-semibold text-gray-700">{label}</span>
-                    <span className="text-sm font-bold text-excBlue-900">{percentage}%</span>
+        <main class="flex-grow -mt-10 px-6 relative z-20 max-w-7xl mx-auto w-full">
+            
+            <section class="mb-20">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="stat-card bg-white p-8 rounded-2xl shadow-lg border-b-4 border-red-500 fade-in-up delay-100 relative overflow-hidden group">
+                        <div class="absolute top-0 right-0 w-24 h-24 bg-gray-50 rounded-bl-full -z-10 transition-transform group-hover:scale-110"></div>
+                        <i class="fas fa-door-open stat-icon text-4xl mb-4 text-red-500"></i>
+                        <div class="mb-2">
+                            <span class="text-5xl font-extrabold text-gray-900">400</span>
+                            <span class="text-2xl font-bold text-gray-500">mil</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-excBlue-900 mb-2">Estudiantes abandonaron</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">En 2023, la deserción alcanzó cifras alarmantes, siendo un problema especialmente crítico en la educación media.</p>
+                    </div>
+                    <div class="stat-card bg-white p-8 rounded-2xl shadow-lg border-b-4 border-excYellow-500 fade-in-up delay-200 relative overflow-hidden group">
+                        <div class="absolute top-0 right-0 w-24 h-24 bg-gray-50 rounded-bl-full -z-10 transition-transform group-hover:scale-110"></div>
+                        <i class="fas fa-graduation-cap stat-icon text-4xl mb-4 text-excBlue-800"></i>
+                        <div class="mb-2">
+                            <span class="text-5xl font-extrabold text-gray-900">43.1</span>
+                            <span class="text-2xl font-bold text-gray-500">%</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-excBlue-900 mb-2">Tránsito Inmediato</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">Solo este porcentaje de los egresados de la educación media en 2023 accedieron inmediatamente a la educación superior.</p>
+                    </div>
+                    <div class="stat-card bg-white p-8 rounded-2xl shadow-lg border-b-4 border-red-500 fade-in-up delay-300 relative overflow-hidden group">
+                        <div class="absolute top-0 right-0 w-24 h-24 bg-gray-50 rounded-bl-full -z-10 transition-transform group-hover:scale-110"></div>
+                        <i class="fas fa-tractor stat-icon text-4xl mb-4 text-red-500"></i>
+                        <div class="mb-2">
+                            <span class="text-5xl font-extrabold text-gray-900">&lt;30</span>
+                            <span class="text-2xl font-bold text-gray-500">%</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-excBlue-900 mb-2">Acceso en la Ruralidad</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">En los contextos rurales, la cifra de tránsito inmediato a la educación superior se desploma dramáticamente.</p>
+                    </div>
                 </div>
-                <div className="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
-                    <div className={`${colorClass} h-3 rounded-full`} style={{ width: `${percentage}%`, transition: 'width 1.5s ease-in-out' }}></div>
+            </section>
+
+            <section class="mb-24 fade-in-up">
+                <div class="text-center mb-12">
+                    <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-excBlue-100 text-excBlue-900 mb-4">
+                        <i class="fas fa-briefcase text-2xl"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold text-excBlue-900 mb-2">El Laberinto Laboral</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">Las cifras conectan el problema educativo directamente con el mercado laboral y la precariedad.</p>
                 </div>
-            </div>
-        );
-
-        const VoiceBubble = ({ percentage, text, delay }) => (
-            <div className={`bg-white p-6 rounded-2xl shadow-md border border-gray-100 fade-in-up ${delay} flex gap-4 items-start`}>
-                <div className="flex-shrink-0 w-16 h-16 rounded-full bg-excBlue-50 border-2 border-excYellow-400 flex items-center justify-center">
-                    <span className="text-xl font-bold text-excBlue-900">{percentage}%</span>
-                </div>
-                <div>
-                    <p className="text-gray-700 italic">"{text}"</p>
-                </div>
-            </div>
-        );
-
-        // --- Main App Component ---
-
-        const App = () => {
-            const [mounted, setMounted] = useState(false);
-
-            useEffect(() => {
-                setMounted(true);
-            }, []);
-
-            return (
-                <div className="min-h-screen flex flex-col">
-                    <Hero />
-
-                    <main className="flex-grow -mt-10 px-6 relative z-20 max-w-7xl mx-auto w-full">
-                        
-                        {/* 1. El Panorama Educativo */}
-                        <section className="mb-20">
-                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                                <StatCard 
-                                    icon="fa-door-open" 
-                                    number="400" 
-                                    suffix="mil" 
-                                    title="Estudiantes abandonaron" 
-                                    desc="En 2023, la deserción alcanzó cifras alarmantes, siendo un problema especialmente crítico en la educación media."
-                                    delay="delay-100"
-                                    isAlert={true}
-                                />
-                                <StatCard 
-                                    icon="fa-graduation-cap" 
-                                    number="43.1" 
-                                    suffix="%" 
-                                    title="Tránsito Inmediato" 
-                                    desc="Solo este porcentaje de los egresados de la educación media en 2023 accedieron inmediatamente a la educación superior."
-                                    delay="delay-200"
-                                />
-                                <StatCard 
-                                    icon="fa-tractor" 
-                                    number="<30" 
-                                    suffix="%" 
-                                    title="Acceso en la Ruralidad" 
-                                    desc="En los contextos rurales, la cifra de tránsito inmediato a la educación superior se desploma dramáticamente."
-                                    delay="delay-300"
-                                    isAlert={true}
-                                />
-                            </div>
-                        </section>
-
-                        {/* 2. Realidades del Desempleo */}
-                        <section className="mb-24 fade-in-up">
-                            <SectionTitle 
-                                icon="fa-briefcase" 
-                                title="El Laberinto Laboral" 
-                                subtitle="Las cifras conectan el problema educativo directamente con el mercado laboral y la precariedad."
-                            />
-                            <div className="bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col lg:flex-row border border-gray-100">
-                                <div className="lg:w-1/3 bg-excBlue-900 text-white p-10 flex flex-col justify-center">
-                                    <h3 className="text-3xl font-bold mb-4 text-excYellow-400">15.3%</h3>
-                                    <p className="text-xl font-semibold mb-2">Desempleo Juvenil</p>
-                                    <p className="text-excBlue-100 text-sm">Tasa registrada para el año 2025, muy por encima de la población general.</p>
-                                </div>
-                                <div className="lg:w-2/3 p-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                                    <div className="flex gap-4 items-start">
-                                        <div className="text-excYellow-500 text-3xl mt-1"><i className="fas fa-venus-mars"></i></div>
-                                        <div>
-                                            <h4 className="font-bold text-gray-900 mb-1">Brecha de Género</h4>
-                                            <p className="text-sm text-gray-600">Por cada hombre joven desempleado, se registran casi <strong className="text-red-500">1.6 mujeres</strong> en la misma situación.</p>
-                                        </div>
-                                    </div>
-                                    <div className="flex gap-4 items-start">
-                                        <div className="text-excYellow-500 text-3xl mt-1"><i className="fas fa-map-marked-alt"></i></div>
-                                        <div>
-                                            <h4 className="font-bold text-gray-900 mb-1">Precariedad Rural</h4>
-                                            <p className="text-sm text-gray-600">Más del <strong className="text-red-500">80%</strong> de los trabajadores jóvenes en la ruralidad se encuentran en la informalidad.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-
-                        {/* 3. Diagnóstico ExC (Barreras Internas) */}
-                        <section className="mb-24 py-16 bg-excBlue-50 rounded-3xl px-6 md:px-12 fade-in-up">
-                            <div className="flex flex-col lg:flex-row gap-12 items-center">
-                                <div className="lg:w-1/2">
-                                    <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-white text-excBlue-900 mb-4 shadow-sm">
-                                        <i className="fas fa-search-chart text-xl"></i>
-                                    </div>
-                                    <h2 className="text-3xl font-bold text-excBlue-900 mb-4">La Realidad en Nuestras Aulas</h2>
-                                    <p className="text-gray-700 mb-6">
-                                        Datos extraídos de las <strong>pruebas OSO aplicadas a estudiantes de octavo a undécimo grado en 2024</strong> por Enseña por Colombia. Las cifras demuestran una desorientación profunda frente al futuro.
-                                    </p>
-                                    <div className="bg-white p-5 rounded-xl shadow-sm border-l-4 border-excYellow-500 mb-6">
-                                        <p className="text-sm text-gray-600"><i className="fas fa-exclamation-triangle text-excYellow-500 mr-2"></i><strong>Hallazgo Clave:</strong> Además de las limitaciones económicas, las barreras más relevantes son la falta de motivación, de acompañamiento y de información.</p>
-                                    </div>
-                                </div>
-                                <div className="lg:w-1/2 w-full bg-white p-8 rounded-2xl shadow-lg">
-                                    <ProgressBar label="No identifican programas afines a sus intereses (Grados 9° y 10°)" percentage={40} colorClass="bg-red-500" />
-                                    <ProgressBar label="No tienen claridad sobre requisitos de ingreso a posmedia" percentage={40} colorClass="bg-orange-500" />
-                                    <ProgressBar label="No reconocen sus propios intereses y gustos" percentage={36} colorClass="bg-yellow-500" />
-                                    <ProgressBar label="No cuentan con apoyo de sus familias (Falta de red)" percentage={30} colorClass="bg-blue-400" />
-                                    <ProgressBar label="No analizan diferentes opciones al decidir" percentage={20} colorClass="bg-blue-300" />
-                                </div>
-                            </div>
-                        </section>
-
-                        {/* 4. Voces de las Juventudes */}
-                        <section className="mb-24 fade-in-up">
-                            <SectionTitle 
-                                icon="fa-comments" 
-                                title="Las Voces de las Juventudes" 
-                                subtitle="¿Qué nos están pidiendo los jóvenes? (Encuesta de Opinión en Educación 2024)"
-                            />
-                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                                <VoiceBubble percentage="49" text="Me gustaría recibir mayor apoyo y orientación sobre becas y apoyos financieros para poder estudiar." delay="delay-100" />
-                                <VoiceBubble percentage="42" text="Necesito conocer mejor y explorar a fondo las opciones de carreras universitarias y técnicas que existen." delay="delay-200" />
-                                <VoiceBubble percentage="25" text="Requiero mayor orientación y acompañamiento sobre cómo funciona realmente la admisión a las instituciones de educación superior." delay="delay-300" />
-                            </div>
-                        </section>
-
-                    </main>
-
-                    {/* 5. La Solución (Llamado a la acción) */}
-                    <footer className="bg-excBlue-900 text-white py-16 px-6 mt-auto">
-                        <div className="max-w-4xl mx-auto text-center fade-in-up">
-                            <i className="fas fa-compass text-5xl text-excYellow-400 mb-6 block"></i>
-                            <h2 className="text-3xl font-bold mb-6">La Orientación es la Respuesta</h2>
-                            <p className="text-xl text-excBlue-100 mb-10 font-light">
-                                La OSO no es un taller más; es el proceso vital para que los jóvenes articulen el <strong>autoconocimiento</strong> con la información real sobre el <strong>mundo de la formación y del trabajo</strong>.
-                            </p>
-                            <div className="bg-excBlue-800 p-6 rounded-2xl inline-block border border-excBlue-500 shadow-xl">
-                                <h4 className="font-bold text-excYellow-400 mb-2 uppercase tracking-wide text-sm"><i className="fas fa-rocket mr-2"></i>Tu Misión como Implementador</h4>
-                                <p className="text-sm text-gray-300">
-                                    Para transformar esta urgencia en acción, guíate con el documento <br/>
-                                    <span className="text-white font-semibold">GUÍA APLICACIÓN OSO (TEMAS Y CRONOGRAMA POR GRADO).</span><br/>
-                                    Allí encontrarás la estructura para intervenir a tiempo.
-                                </p>
+                <div class="bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col lg:flex-row border border-gray-100">
+                    <div class="lg:w-1/3 bg-excBlue-900 text-white p-10 flex flex-col justify-center">
+                        <h3 class="text-3xl font-bold mb-4 text-excYellow-400">15.3%</h3>
+                        <p class="text-xl font-semibold mb-2">Desempleo Juvenil</p>
+                        <p class="text-excBlue-100 text-sm">Tasa registrada para el año 2025, muy por encima de la población general.</p>
+                    </div>
+                    <div class="lg:w-2/3 p-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                        <div class="flex gap-4 items-start">
+                            <div class="text-excYellow-500 text-3xl mt-1"><i class="fas fa-venus-mars"></i></div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-1">Brecha de Género</h4>
+                                <p class="text-sm text-gray-600">Por cada hombre joven desempleado, se registran casi <strong class="text-red-500">1.6 mujeres</strong> en la misma situación.</p>
                             </div>
                         </div>
-                    </footer>
+                        <div class="flex gap-4 items-start">
+                            <div class="text-excYellow-500 text-3xl mt-1"><i class="fas fa-map-marked-alt"></i></div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-1">Precariedad Rural</h4>
+                                <p class="text-sm text-gray-600">Más del <strong class="text-red-500">80%</strong> de los trabajadores jóvenes en la ruralidad se encuentran en la informalidad.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            );
-        };
+            </section>
 
-        const root = ReactDOM.createRoot(document.getElementById('root'));
-        root.render(<App />);
+            <section class="mb-24 py-16 bg-excBlue-50 rounded-3xl px-6 md:px-12 fade-in-up">
+                <div class="flex flex-col lg:flex-row gap-12 items-center">
+                    <div class="lg:w-1/2">
+                        <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-white text-excBlue-900 mb-4 shadow-sm">
+                            <i class="fas fa-chart-line text-xl"></i>
+                        </div>
+                        <h2 class="text-3xl font-bold text-excBlue-900 mb-4">La Realidad en Nuestras Aulas</h2>
+                        <p class="text-gray-700 mb-6">
+                            Datos extraídos de las <strong>pruebas OSO aplicadas a estudiantes de octavo a undécimo grado en 2024</strong> por Enseña por Colombia. Las cifras demuestran una desorientación profunda frente al futuro.
+                        </p>
+                        <div class="bg-white p-5 rounded-xl shadow-sm border-l-4 border-excYellow-500 mb-6">
+                            <p class="text-sm text-gray-600"><i class="fas fa-exclamation-triangle text-excYellow-500 mr-2"></i><strong>Hallazgo Clave:</strong> Además de las limitaciones económicas, las barreras más relevantes son la falta de motivación, de acompañamiento y de información.</p>
+                        </div>
+                    </div>
+                    <div class="lg:w-1/2 w-full bg-white p-8 rounded-2xl shadow-lg">
+                        <div class="mb-6">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm font-semibold text-gray-700">No identifican programas afines a sus intereses (Grados 9° y 10°)</span>
+                                <span class="text-sm font-bold text-excBlue-900">40%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
+                                <div class="bg-red-500 h-3 rounded-full progress-bar" data-width="40"></div>
+                            </div>
+                        </div>
+                        <div class="mb-6">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm font-semibold text-gray-700">No tienen claridad sobre requisitos de ingreso a posmedia</span>
+                                <span class="text-sm font-bold text-excBlue-900">40%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
+                                <div class="bg-orange-500 h-3 rounded-full progress-bar" data-width="40"></div>
+                            </div>
+                        </div>
+                        <div class="mb-6">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm font-semibold text-gray-700">No reconocen sus propios intereses y gustos</span>
+                                <span class="text-sm font-bold text-excBlue-900">36%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
+                                <div class="bg-yellow-500 h-3 rounded-full progress-bar" data-width="36"></div>
+                            </div>
+                        </div>
+                        <div class="mb-6">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm font-semibold text-gray-700">No cuentan con apoyo de sus familias (Falta de red)</span>
+                                <span class="text-sm font-bold text-excBlue-900">30%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
+                                <div class="bg-blue-400 h-3 rounded-full progress-bar" data-width="30"></div>
+                            </div>
+                        </div>
+                        <div class="mb-6">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm font-semibold text-gray-700">No analizan diferentes opciones al decidir</span>
+                                <span class="text-sm font-bold text-excBlue-900">20%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
+                                <div class="bg-blue-300 h-3 rounded-full progress-bar" data-width="20"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mb-24 fade-in-up">
+                <div class="text-center mb-12">
+                    <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-excBlue-100 text-excBlue-900 mb-4">
+                        <i class="fas fa-comments text-2xl"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold text-excBlue-900 mb-2">Las Voces de las Juventudes</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">¿Qué nos están pidiendo los jóvenes? (Encuesta de Opinión en Educación 2024)</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-white p-6 rounded-2xl shadow-md border border-gray-100 fade-in-up delay-100 flex gap-4 items-start">
+                        <div class="flex-shrink-0 w-16 h-16 rounded-full bg-excBlue-50 border-2 border-excYellow-400 flex items-center justify-center">
+                            <span class="text-xl font-bold text-excBlue-900">49%</span>
+                        </div>
+                        <div>
+                            <p class="text-gray-700 italic">"Me gustaría recibir mayor apoyo y orientación sobre becas y apoyos financieros para poder estudiar."</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-md border border-gray-100 fade-in-up delay-200 flex gap-4 items-start">
+                        <div class="flex-shrink-0 w-16 h-16 rounded-full bg-excBlue-50 border-2 border-excYellow-400 flex items-center justify-center">
+                            <span class="text-xl font-bold text-excBlue-900">42%</span>
+                        </div>
+                        <div>
+                            <p class="text-gray-700 italic">"Necesito conocer mejor y explorar a fondo las opciones de carreras universitarias y técnicas que existen."</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-md border border-gray-100 fade-in-up delay-300 flex gap-4 items-start">
+                        <div class="flex-shrink-0 w-16 h-16 rounded-full bg-excBlue-50 border-2 border-excYellow-400 flex items-center justify-center">
+                            <span class="text-xl font-bold text-excBlue-900">25%</span>
+                        </div>
+                        <div>
+                            <p class="text-gray-700 italic">"Requiero mayor orientación y acompañamiento sobre cómo funciona realmente la admisión a las instituciones de educación superior."</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="bg-excBlue-900 text-white py-16 px-6 mt-auto">
+            <div class="max-w-4xl mx-auto text-center fade-in-up">
+                <i class="fas fa-compass text-5xl text-excYellow-400 mb-6 block"></i>
+                <h2 class="text-3xl font-bold mb-6">La Orientación es la Respuesta</h2>
+                <p class="text-xl text-excBlue-100 mb-10 font-light">
+                    La OSO no es un taller más; es el proceso vital para que los jóvenes articulen el <strong>autoconocimiento</strong> con la información real sobre el <strong>mundo de la formación y del trabajo</strong>.
+                </p>
+                <div class="bg-excBlue-800 p-6 rounded-2xl inline-block border border-excBlue-500 shadow-xl">
+                    <h4 class="font-bold text-excYellow-400 mb-2 uppercase tracking-wide text-sm"><i class="fas fa-rocket mr-2"></i>Tu Misión como Implementador</h4>
+                    <p class="text-sm text-gray-300">
+                        Para transformar esta urgencia en acción, guíate con el documento <br/>
+                        <span class="text-white font-semibold">GUÍA APLICACIÓN OSO (TEMAS Y CRONOGRAMA POR GRADO).</span><br/>
+                        Allí encontrarás la estructura para intervenir a tiempo.
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const bars = document.querySelectorAll('.progress-bar');
+            bars.forEach(function(bar) {
+                const width = bar.getAttribute('data-width');
+                setTimeout(function() {
+                    bar.style.width = width + '%';
+                }, 300);
+            });
+        });
     </script>
 </body>
 </html>
