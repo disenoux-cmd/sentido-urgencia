@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OVI: El Sentido de Urgencia - Enseña por Colombia</title>
-    
+    <link rel="icon" type="image/x-icon" href="imgs/favicon.ico">
+
     <script src="https://cdn.tailwindcss.com"></script>
     
     <script>
@@ -69,9 +70,64 @@
         ::-webkit-scrollbar-track { background: #f1f1f1; }
         ::-webkit-scrollbar-thumb { background: #0f243e; border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: #1e3a5f; }
+
+        /* OSO parallax - imagen que acompaña la lectura */
+        .oso-parallax-wrapper {
+            position: fixed;
+            top: 50%;
+            right: 0;
+            width: 150px;
+            height: auto;
+            overflow: visible;
+            pointer-events: none;
+            z-index: 5;
+            transform: translateY(-50%);
+            transition: top 0.05s linear, transform 0.05s linear;
+        }
+
+        .oso-parallax-img {
+            width: 180px;
+            max-width: none;
+            height: auto;
+            display: block;
+            margin-left: -10px;
+            filter: drop-shadow(0 10px 25px rgba(15, 36, 62, 0.25));
+            animation: oso-float 6s ease-in-out infinite;
+        }
+
+        @keyframes oso-float {
+            0%, 100% { transform: translate(0, 0)   rotate(-1deg); }
+            25%      { transform: translate(-2px, -2px) rotate(0.5deg); }
+            50%      { transform: translate(-4px, 0)    rotate(1deg); }
+            75%      { transform: translate(-2px, 2px)  rotate(0.5deg); }
+        }
+
+        @media (max-width: 1280px) {
+            .oso-parallax-wrapper { width: 120px; }
+            .oso-parallax-img { width: 150px; max-width: none; margin-left: -5px; }
+        }
+        @media (max-width: 1024px) {
+            .oso-parallax-wrapper { display: none; }
+        }
+
+        /* Fuente de las cifras */
+        .fuente-cifra {
+            font-size: 0.7rem;
+            color: #6b7280;
+            font-style: italic;
+            margin-top: 0.5rem;
+            display: block;
+            border-top: 1px dashed #e5e7eb;
+            padding-top: 0.4rem;
+        }
+        .fuente-cifra strong { color: #1e3a5f; font-style: normal; }
     </style>
 </head>
 <body>
+    <div class="oso-parallax-wrapper" id="osoParallax">
+        <img src="imgs/oso-lateral.svg" alt="OSO - Orientación Socio Ocupacional" class="oso-parallax-img" aria-hidden="true">
+    </div>
+
     <div class="min-h-screen flex flex-col">
         <header class="bg-excBlue-900 text-white pt-20 pb-24 px-6 relative overflow-hidden">
             <div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
@@ -110,6 +166,7 @@
                         </div>
                         <h3 class="text-xl font-bold text-excBlue-900 mb-2">Estudiantes abandonaron</h3>
                         <p class="text-gray-600 text-sm leading-relaxed">En 2023, la deserción alcanzó cifras alarmantes, siendo un problema especialmente crítico en la educación media.</p>
+                        <span class="fuente-cifra"><strong>Fuente:</strong> Ministerio de Educación Nacional (MEN), 2023.</span>
                     </div>
                     <div class="stat-card bg-white p-8 rounded-2xl shadow-lg border-b-4 border-excYellow-500 fade-in-up delay-200 relative overflow-hidden group">
                         <div class="absolute top-0 right-0 w-24 h-24 bg-gray-50 rounded-bl-full -z-10 transition-transform group-hover:scale-110"></div>
@@ -120,6 +177,7 @@
                         </div>
                         <h3 class="text-xl font-bold text-excBlue-900 mb-2">Tránsito Inmediato</h3>
                         <p class="text-gray-600 text-sm leading-relaxed">Solo este porcentaje de los egresados de la educación media en 2023 accedieron inmediatamente a la educación superior.</p>
+                        <span class="fuente-cifra"><strong>Fuente:</strong> Ministerio de Educación Nacional (MEN), 2023.</span>
                     </div>
                     <div class="stat-card bg-white p-8 rounded-2xl shadow-lg border-b-4 border-red-500 fade-in-up delay-300 relative overflow-hidden group">
                         <div class="absolute top-0 right-0 w-24 h-24 bg-gray-50 rounded-bl-full -z-10 transition-transform group-hover:scale-110"></div>
@@ -130,6 +188,7 @@
                         </div>
                         <h3 class="text-xl font-bold text-excBlue-900 mb-2">Acceso en la Ruralidad</h3>
                         <p class="text-gray-600 text-sm leading-relaxed">En los contextos rurales, la cifra de tránsito inmediato a la educación superior se desploma dramáticamente.</p>
+                        <span class="fuente-cifra"><strong>Fuente:</strong> Ministerio de Educación Nacional (MEN), 2023.</span>
                     </div>
                 </div>
             </section>
@@ -165,6 +224,7 @@
                         </div>
                     </div>
                 </div>
+                <p class="text-center text-xs italic text-gray-500 mt-4"><strong>Fuente:</strong> Departamento Administrativo Nacional de Estadísticas (DANE), 2025.</p>
             </section>
 
             <section class="mb-24 py-16 bg-excBlue-50 rounded-3xl px-6 md:px-12 fade-in-up">
@@ -180,6 +240,7 @@
                         <div class="bg-white p-5 rounded-xl shadow-sm border-l-4 border-excYellow-500 mb-6">
                             <p class="text-sm text-gray-600"><i class="fas fa-exclamation-triangle text-excYellow-500 mr-2"></i><strong>Hallazgo Clave:</strong> Además de las limitaciones económicas, las barreras más relevantes son la falta de motivación, de acompañamiento y de información.</p>
                         </div>
+                        <p class="text-xs italic text-gray-500"><strong>Fuente:</strong> Pruebas OSO aplicadas durante el primer semestre de 2024 a 577 estudiantes entre octavo y undécimo grado — Enseña por Colombia, 2024.</p>
                     </div>
                     <div class="lg:w-1/2 w-full bg-white p-8 rounded-2xl shadow-lg">
                         <div class="mb-6">
@@ -265,6 +326,7 @@
                         </div>
                     </div>
                 </div>
+                <p class="text-center text-xs italic text-gray-500 mt-8"><strong>Fuente:</strong> Encuesta de Opinión en Educación (EOE) 2024 — Fundación Empresarios por la Educación (Fundación EXE), 2024.</p>
             </section>
 
         </main>
@@ -298,6 +360,30 @@
                 }, 300);
             });
         });
+
+        // Parallax OSO: la imagen acompaña al usuario a lo largo de la lectura
+        (function () {
+            const oso = document.getElementById('osoParallax');
+            if (!oso) return;
+            let ticking = false;
+            function updateParallax() {
+                const scrollY = window.scrollY || window.pageYOffset;
+                const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+                const progress = maxScroll > 0 ? scrollY / maxScroll : 0;
+                // Movimiento vertical sutil basado en scroll
+                const offsetY = -30 + (progress * 60);
+                oso.style.top = (50 + offsetY * 0.3) + '%';
+                oso.style.transform = 'translateY(calc(-50% + ' + (offsetY * 0.5) + 'px))';
+                ticking = false;
+            }
+            window.addEventListener('scroll', function () {
+                if (!ticking) {
+                    window.requestAnimationFrame(updateParallax);
+                    ticking = true;
+                }
+            }, { passive: true });
+            updateParallax();
+        })();
     </script>
 </body>
 </html>
